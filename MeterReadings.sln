@@ -5,7 +5,9 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterReadingsApi", "MeterReadingsApi\MeterReadingsApi.csproj", "{087A6233-3726-4003-8171-CC72184ECA73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterReadingsDatabase", "MeterReadingsDatabase\MeterReadingsDatabase.csproj", "{F15F4E6A-9C13-4934-A098-E3E798918DAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterReadingsDatabase", "MeterReadingsDatabase\MeterReadingsDatabase.csproj", "{F15F4E6A-9C13-4934-A098-E3E798918DAB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterReadingApi.UnitTests", "MeterReadingApi.UnitTests\MeterReadingApi.UnitTests.csproj", "{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F15F4E6A-9C13-4934-A098-E3E798918DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F15F4E6A-9C13-4934-A098-E3E798918DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F15F4E6A-9C13-4934-A098-E3E798918DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

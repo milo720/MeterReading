@@ -5,14 +5,16 @@ namespace MeterReadingsDatabase
 {
     public class MeterReadingDbContext : DbContext
     {
-        public MeterReadingDbContext(DbContextOptions options) : base(options) { }
-        DbSet<Account> Accounts
+
+
+        public MeterReadingDbContext(DbContextOptions<MeterReadingDbContext> options) : base(options) { }
+        public virtual DbSet<Account> Accounts
         {
             get;
             set;
         }
 
-        DbSet<MeterReading> MeterReadings
+        public virtual DbSet<MeterReading> MeterReadings
         {
             get;
             set;

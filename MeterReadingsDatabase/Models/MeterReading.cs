@@ -19,6 +19,6 @@ namespace MeterReadingsDatabase.Models
             set;
         }
 
-        public Account User { get; set; }
+        public Account Account { get; set; }
     }
 }

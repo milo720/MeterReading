@@ -24,3 +24,8 @@ It also mentions a UI being a good addition but as this is not a requirement I w
 1. Created a default .ent core API
 1. Added EF core code first with migrations.
 1. Create blank unit test project, using NUnit.
+1. Started with valaidation tests
+1. in-built model validation won't easily allow validation of file content type so using flent validation
+1. Could look into steaming and batching the CSV for efficenty on very large file uploads, leaving that off for now as it seems like premature optimisation.
+1. Mostly Done with first pass at code but now need to test it with some rigor, adding unit tests. 
+1. Have left the unit test a bit sparce in the interest of time, will add more if I get more time.

@@ -27,6 +27,6 @@ namespace MeterReadingsDatabase.Models
             set;
         }
 
-        DbSet<MeterReading> MeterReadings { get; set; }
+        public DbSet<MeterReading> MeterReadings { get; set; }
     }
 }
