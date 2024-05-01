@@ -18,3 +18,9 @@ It also mentions a UI being a good addition but as this is not a requirement I w
 
 1. As the seed data is called Test_Accounts.csv I'm going to assume that the seeding is for test only and not include the seeding as part of the system but instead as part of the tests.
 
+
+# Current Steps
+
+1. Created a default .ent core API
+1. Added EF core code first with migrations.
+1. Create blank unit test project, using NUnit.
