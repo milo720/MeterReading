@@ -9,6 +9,7 @@ It also mentions a UI being a good addition but as this is not a requirement I w
 # Assumptions
 
 1. As the seed data is called Test_Accounts.csv I'm going to assume that the seeding is for test only and not include the seeding as part of the system but instead as part of the tests.
+1. As this a technical test with just me I will be doing a few things quick, such as less unit testing, no branching policy ect. I would do these differently in a commercial environment.
 
 # Solution
 
