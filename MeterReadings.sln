@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterReadingsDatabase", "Me
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MeterReadingApi.UnitTests", "MeterReadingApi.UnitTests\MeterReadingApi.UnitTests.csproj", "{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MeterReadingApiIntergrationTests", "MeterReadingApiIntergrationTests\MeterReadingApiIntergrationTests.csproj", "{8D8043C2-D1FE-448A-8195-FE54C456CC89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9AC40A8-3B28-4966-AABD-FA9A453DAFBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D8043C2-D1FE-448A-8195-FE54C456CC89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D8043C2-D1FE-448A-8195-FE54C456CC89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D8043C2-D1FE-448A-8195-FE54C456CC89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D8043C2-D1FE-448A-8195-FE54C456CC89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

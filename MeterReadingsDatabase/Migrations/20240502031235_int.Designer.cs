@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MeterReadingsDatabase.Migrations
 {
     [DbContext(typeof(MeterReadingDbContext))]
-    [Migration("20240501172919_init")]
-    partial class init
+    [Migration("20240502031235_int")]
+    partial class @int
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -28,12 +28,9 @@ namespace MeterReadingsDatabase.Migrations
             modelBuilder.Entity("MeterReadingsDatabase.Models.Account", b =>
                 {
                     b.Property<int>("AccountId")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AccountId"));
-
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -54,31 +51,36 @@ namespace MeterReadingsDatabase.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MeterReadingId"));
 
+                    b.Property<int>("AccountId")
+                        .HasColumnType("int");
+
                     b.Property<int>("MeterReadValue")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("MeterReadingDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserAccountId")
-                        .HasColumnType("int");
-
                     b.HasKey("MeterReadingId");
 
-                    b.HasIndex("UserAccountId");
+                    b.HasIndex("AccountId");
 
                     b.ToTable("MeterReadings");
                 });
 
             modelBuilder.Entity("MeterReadingsDatabase.Models.MeterReading", b =>
                 {
-                    b.HasOne("MeterReadingsDatabase.Models.Account", "User")
-                        .WithMany()
-                        .HasForeignKey("UserAccountId")
+                    b.HasOne("MeterReadingsDatabase.Models.Account", "Account")
+                        .WithMany("MeterReadings")
+                        .HasForeignKey("AccountId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("User");
+                    b.Navigation("Account");
+                });
+
+            modelBuilder.Entity("MeterReadingsDatabase.Models.Account", b =>
+                {
+                    b.Navigation("MeterReadings");
                 });
 #pragma warning restore 612, 618
         }

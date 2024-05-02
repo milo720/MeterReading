@@ -1,7 +1,14 @@
+using FluentValidation;
+using MeterReadingsApi.Models.Reqest.FileRequestModels;
+using MeterReadingsApi.Models.Reqest.FileRequestModels.CsvDataModels;
+using MeterReadingsApi.Repository;
+using MeterReadingsApi.Services;
+using MeterReadingsApi.Services.MeterUploadService.CsvReading;
+using MeterReadingsApi.Services.MeterUploadService.DataValidator;
 using MeterReadingsDatabase;
+using MeterReadingsDatabase.Repository;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +19,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<MeterReadingDbContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("MeterReadingDB")));
+
+builder.Services.AddTransient<IMeterReadingCsvDataValidator, MeterReadingCsvContentValidator>();
+builder.Services.AddTransient<IMeterReadingCsvReader, MeterReadingCsvReader>();
+builder.Services.AddTransient< AbstractValidator < MeterReadingCsvDataLine > , MeterReadingCsvDataLineValidator >();
+builder.Services.AddTransient< AbstractValidator <FileRequestModel> , FileRequestModelValidator >();
+builder.Services.AddTransient<IMeterReadingUploadService, MeterReadingUploadService>();
+builder.Services.AddTransient<IMeterReadingRepositiory ,MeterReadingRepository>();
+
 
 
 var app = builder.Build();

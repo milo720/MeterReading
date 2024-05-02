@@ -7,7 +7,7 @@ namespace MeterReadingsDatabase
     {
 
 
-        public MeterReadingDbContext(DbContextOptions<MeterReadingDbContext> options) : base(options) { }
+        public MeterReadingDbContext(DbContextOptions options) : base(options) { }
         public virtual DbSet<Account> Accounts
         {
             get;

@@ -3,10 +3,6 @@ using MeterReadingsApi.Models.Response;
 using MeterReadingsApi.Services.MeterUploadService.CsvReading;
 using MeterReadingsApi.Services.MeterUploadService.DataValidator;
 using MeterReadingsDatabase.Repository;
-using Microsoft.SqlServer.Server;
-using System.Formats.Asn1;
-using System.Globalization;
-using System.Reflection.PortableExecutable;
 
 namespace MeterReadingsApi.Services
 {

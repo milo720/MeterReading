@@ -2,12 +2,11 @@
 using MeterReadingsApi.Models.Reqest.FileRequestModels;
 using MeterReadingsApi.Models.Response;
 using MeterReadingsApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MeterReadingsApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class MeterReadingUploadsController : ControllerBase
     {
