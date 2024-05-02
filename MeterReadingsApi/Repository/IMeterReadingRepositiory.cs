@@ -1,17 +1,13 @@
 ﻿using MeterReadingsApi.Models.Reqest.FileRequestModels.CsvDataModels;
-using MeterReadingsApi.Models.Response;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using MeterReadingsDatabase.Models;
+
 
 namespace MeterReadingsDatabase.Repository
 {
     public interface IMeterReadingRepositiory
     {
-        public (IEnumerable<Error> errors, int addedRecords) ValidateAgainstExitingDataAndStoreMeterReading(IEnumerable<MeterReadingCsvDataLine> meterReadings);
+        public void UploadRedings(IEnumerable<MeterReadingCsvDataLine> meterReadings);
 
+        public IEnumerable<Account> GetAccounts(IEnumerable<int> IDs);
     }
 }

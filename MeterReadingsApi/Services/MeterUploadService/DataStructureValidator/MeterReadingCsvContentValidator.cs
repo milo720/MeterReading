@@ -39,8 +39,17 @@ namespace MeterReadingsApi.Services.MeterUploadService.DataValidator
                 }
             }
 
+            var groupedReadings = validRecords.GroupBy(c => c.AccountId);
+            var duplicationErrors = groupedReadings.Where(c => c.Count() > 1).Select(c => c.OrderByDescending(s => s.MeterReadingDateTime).Skip(1)).SelectMany(c => c).Select(c => new Error()
+            {
+                Message = "There is more than one entry for this account in this import, as such the newest has been used",
+                Data = c,
+                Source = "AccountId"
+            }).ToList();
+            var deduplicatedMeterReadings = groupedReadings.Select(c => c.MaxBy(c => c.MeterReadingDateTime));
 
-            return (validRecords, errors);
+
+            return (deduplicatedMeterReadings, errors.Concat(duplicationErrors));
         }
     }
 }

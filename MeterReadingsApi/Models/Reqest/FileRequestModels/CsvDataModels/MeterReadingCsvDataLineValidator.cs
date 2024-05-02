@@ -1,6 +1,5 @@
 ﻿using FluentValidation;
-using System.Diagnostics.CodeAnalysis;
-using System.Net.Mime;
+
 
 namespace MeterReadingsApi.Models.Reqest.FileRequestModels.CsvDataModels
 {

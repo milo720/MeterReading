@@ -4,6 +4,7 @@ using MeterReadingsApi.Models.Reqest.FileRequestModels.CsvDataModels;
 using MeterReadingsApi.Repository;
 using MeterReadingsApi.Services;
 using MeterReadingsApi.Services.MeterUploadService.CsvReading;
+using MeterReadingsApi.Services.MeterUploadService.CurrentDataValidator;
 using MeterReadingsApi.Services.MeterUploadService.DataValidator;
 using MeterReadingsDatabase;
 using MeterReadingsDatabase.Repository;
@@ -26,6 +27,7 @@ builder.Services.AddTransient< AbstractValidator < MeterReadingCsvDataLine > , M
 builder.Services.AddTransient< AbstractValidator <FileRequestModel> , FileRequestModelValidator >();
 builder.Services.AddTransient<IMeterReadingUploadService, MeterReadingUploadService>();
 builder.Services.AddTransient<IMeterReadingRepositiory ,MeterReadingRepository>();
+builder.Services.AddTransient<IDatabaseDataValidator ,DatabaseDataValidator>();
 
 
 
