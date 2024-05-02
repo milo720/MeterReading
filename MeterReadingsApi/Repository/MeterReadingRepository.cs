@@ -36,6 +36,7 @@ namespace MeterReadingsApi.Repository
                 readingDbContext.SaveChanges();
 
             }
+            transaction.Commit();
 
         }
     }

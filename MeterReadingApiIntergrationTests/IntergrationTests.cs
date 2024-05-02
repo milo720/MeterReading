@@ -48,6 +48,8 @@ namespace MeterReadingApiIntergrationTests
             var responseObject = JsonSerializer.Deserialize<MeterReadingUploadResponse>(responseContent, options);
             responseObject.SuccessfullCount.Should().Be(24); 
             responseObject.UnccessfullCount.Should().Be(11); 
+
+            context.MeterReadings.Should().HaveCount(24);
         }
     }
 }

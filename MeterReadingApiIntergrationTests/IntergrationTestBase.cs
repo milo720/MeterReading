@@ -48,6 +48,7 @@ namespace MeterReadingApiIntergrationTests
             };
         protected MsSqlContainer _msSqlContainer;
         protected WebApplicationFactory<Program> appFactory;
+        protected MeterReadingDbContext context;
 
        [SetUp]
         public async Task Setup()
@@ -72,11 +73,11 @@ namespace MeterReadingApiIntergrationTests
 
             await _msSqlContainer.StartAsync();
             var scope = appFactory.Services.CreateScope();
-            using var dbContext = scope.ServiceProvider.GetService<MeterReadingDbContext>();
-            dbContext.Database.EnsureCreated();
+            context = scope.ServiceProvider.GetService<MeterReadingDbContext>();
+            context.Database.EnsureCreated();
             foreach (var account in testAccounts)
             {
-                dbContext.Accounts.Add(new Account()
+                context.Accounts.Add(new Account()
                 {
                     AccountId = account.id,
                     FirstName = account.firstName,
@@ -85,7 +86,7 @@ namespace MeterReadingApiIntergrationTests
                 });
 
             }
-            dbContext.SaveChanges();
+            context.SaveChanges();
 
 
         }
@@ -97,6 +98,7 @@ namespace MeterReadingApiIntergrationTests
             await _msSqlContainer.StopAsync();
             await _msSqlContainer.DisposeAsync();
             await appFactory.DisposeAsync();
+            await context.DisposeAsync();
         }
     }
 }
